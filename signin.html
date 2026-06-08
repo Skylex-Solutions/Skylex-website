@@ -98,8 +98,73 @@
     .signin-divider::before, .signin-divider::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.1); }
 
     .signin-contact { font-size: 13px; color: rgba(255,255,255,.35); }
-    .signin-contact a { color: var(--indigo-300); text-decoration: none; }
+    .signin-contact a { color: var(--indigo-300); text-decoration: none; cursor: pointer; }
     .signin-contact a:hover { text-decoration: underline; }
+
+    /* ── Contact modal ────────────────────────────────────────────────────── */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.6);
+      backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 999;
+      padding: 24px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .2s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal {
+      background: #1e1b4b;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 16px;
+      padding: 32px;
+      width: 100%;
+      max-width: 380px;
+      transform: translateY(12px);
+      transition: transform .2s;
+    }
+    .modal-overlay.open .modal { transform: translateY(0); }
+    .modal-title { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .modal-sub { font-size: 13px; color: rgba(255,255,255,.45); margin-bottom: 24px; line-height: 1.5; }
+    .modal-field { margin-bottom: 14px; text-align: left; }
+    .modal-field label {
+      display: block; font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: rgba(255,255,255,.4); margin-bottom: 6px;
+    }
+    .modal-field label .req { color: #f87171; margin-left: 2px; }
+    .modal-input {
+      width: 100%; padding: 11px 14px;
+      border-radius: 8px;
+      border: 1.5px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.07);
+      color: var(--white); font-size: 14px;
+      font-family: var(--font); outline: none;
+      transition: border .15s, background .15s;
+    }
+    .modal-input::placeholder { color: rgba(255,255,255,.25); }
+    .modal-input:focus { border-color: var(--indigo-400); background: rgba(255,255,255,.11); }
+    .modal-input.invalid { border-color: #f87171; }
+    .modal-actions { display: flex; gap: 10px; margin-top: 20px; }
+    .modal-cancel {
+      flex: 1; padding: 11px; border-radius: 8px;
+      background: transparent; border: 1.5px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.5); font-size: 14px; font-weight: 600;
+      font-family: var(--font); cursor: pointer; transition: all .15s;
+    }
+    .modal-cancel:hover { border-color: rgba(255,255,255,.3); color: rgba(255,255,255,.8); }
+    .modal-send {
+      flex: 2; padding: 11px; border-radius: 8px;
+      background: var(--indigo-600); border: none;
+      color: var(--white); font-size: 14px; font-weight: 600;
+      font-family: var(--font); cursor: pointer; transition: background .15s;
+    }
+    .modal-send:hover:not(:disabled) { background: var(--indigo-500); }
+    .modal-send:disabled { opacity: .45; cursor: not-allowed; }
+    .modal-success {
+      text-align: center; padding: 12px 0 4px;
+      font-size: 14px; color: #86efac;
+    }
   </style>
 </head>
 <body>
@@ -150,8 +215,39 @@
 
       <div class="signin-divider"><span>not sure?</span></div>
       <p class="signin-contact">
-        Contact <a href="mailto:info@skycoresolutions.com">info@skycoresolutions.com</a> to get your company's subdomain.
+        Don't know your subdomain? <a onclick="openModal()">Contact us</a>
       </p>
+
+      <!-- Contact modal -->
+      <div class="modal-overlay" id="modalOverlay" onclick="closeOnBackdrop(event)">
+        <div class="modal">
+          <p class="modal-title">Get your subdomain</p>
+          <p class="modal-sub">Fill in your details and we'll get back to you with your company's Skylex access.</p>
+
+          <div id="modalForm">
+            <div class="modal-field">
+              <label>Full name</label>
+              <input id="mName" class="modal-input" type="text" placeholder="Jane Smith" />
+            </div>
+            <div class="modal-field">
+              <label>Work email <span class="req">*</span></label>
+              <input id="mEmail" class="modal-input" type="email" placeholder="jane@company.com" />
+            </div>
+            <div class="modal-field">
+              <label>Company name <span class="req">*</span></label>
+              <input id="mCompany" class="modal-input" type="text" placeholder="Acme Corp" />
+            </div>
+            <div class="modal-actions">
+              <button class="modal-cancel" onclick="closeModal()">Cancel</button>
+              <button class="modal-send" onclick="sendContact()">Send →</button>
+            </div>
+          </div>
+
+          <div class="modal-success" id="modalSuccess" style="display:none">
+            ✓ Message sent! We'll be in touch shortly.
+          </div>
+        </div>
+      </div>
 
       <div class="signin-divider" style="margin-top:24px"></div>
       <p class="signin-back"><a href="/">← Back to skylexsolutions.com</a></p>
@@ -198,6 +294,58 @@
       preview.classList.remove('hidden');
       btn.disabled = false;
     }
+
+    // ── Contact modal ────────────────────────────────────────────────────────
+    function openModal() {
+      document.getElementById('modalOverlay').classList.add('open');
+      document.getElementById('mName').focus();
+    }
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('open');
+      // Reset form
+      ['mName','mEmail','mCompany'].forEach(id => {
+        const el = document.getElementById(id);
+        el.value = '';
+        el.classList.remove('invalid');
+      });
+      document.getElementById('modalForm').style.display = '';
+      document.getElementById('modalSuccess').style.display = 'none';
+    }
+    function closeOnBackdrop(e) {
+      if (e.target === document.getElementById('modalOverlay')) closeModal();
+    }
+    function sendContact() {
+      const name    = document.getElementById('mName');
+      const email   = document.getElementById('mEmail');
+      const company = document.getElementById('mCompany');
+      let valid = true;
+
+      // Validate mandatory fields (email + company)
+      [email, company].forEach(el => {
+        if (!el.value.trim()) { el.classList.add('invalid'); valid = false; }
+        else el.classList.remove('invalid');
+      });
+      name.classList.remove('invalid');
+
+      if (!valid) return;
+
+      // Wire to a real endpoint (Formspree etc.) when ready
+      console.log('Contact request:', {
+        name: name.value.trim(),
+        email: email.value.trim(),
+        company: company.value.trim(),
+      });
+
+      document.getElementById('modalForm').style.display = 'none';
+      document.getElementById('modalSuccess').style.display = 'block';
+
+      setTimeout(closeModal, 2500);
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
 
     function handleSignin(e) {
       e.preventDefault();
