@@ -288,7 +288,7 @@ body {
   line-height: 1.5;
 }
 .why__list li::before { content: ''; display: block; flex-shrink: 0; margin-top: 6px; width: 8px; height: 8px; border-radius: 50%; }
-.why__list--bad li::before { background: var(--zinc-300); }
+.why__list--bad li::before { background: var(--zinc-400); }
 .why__list--good li::before { background: var(--indigo-500); }
 .why__divider {
   display: flex;
