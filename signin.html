@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in — Skylex</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { background: linear-gradient(160deg, var(--indigo-950) 0%, #2d1b69 50%, var(--indigo-900) 100%); min-height: 100vh; display: flex; flex-direction: column; }
+    .signin-wrap { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 24px; }
+    .signin-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(16px);
+      border-radius: 20px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+    }
+    .signin-logo { margin-bottom: 32px; }
+    .signin-logo a { font-size: 28px; font-weight: 800; text-decoration: none; letter-spacing: -.5px; }
+    .signin-title { font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .signin-sub { font-size: 14px; color: rgba(255,255,255,.55); margin-bottom: 32px; line-height: 1.6; }
+    .signin-field { text-align: left; margin-bottom: 16px; }
+    .signin-field label { display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,.45); margin-bottom: 8px; }
+    .signin-input {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.08);
+      color: var(--white);
+      font-size: 16px;
+      font-family: var(--font);
+      outline: none;
+      transition: border .15s, background .15s;
+    }
+    .signin-input::placeholder { color: rgba(255,255,255,.3); }
+    .signin-input:focus { border-color: var(--indigo-400); background: rgba(255,255,255,.12); }
+
+    /* URL preview */
+    .signin-preview {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 14px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 8px;
+      margin-bottom: 24px;
+      min-height: 40px;
+      transition: opacity .2s;
+    }
+    .signin-preview.hidden { opacity: 0; pointer-events: none; }
+    .preview-arrow { color: rgba(255,255,255,.3); font-size: 13px; flex-shrink: 0; }
+    .preview-url { font-size: 13px; font-family: monospace; color: var(--indigo-300); word-break: break-all; text-align: left; }
+    .preview-slug { color: var(--white); font-weight: 700; }
+
+    .signin-btn {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      background: var(--indigo-600);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: background .15s, transform .1s, opacity .15s;
+      margin-bottom: 20px;
+    }
+    .signin-btn:hover:not(:disabled) { background: var(--indigo-500); transform: translateY(-1px); }
+    .signin-btn:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+
+    .signin-error {
+      font-size: 13px;
+      color: #fca5a5;
+      background: rgba(239,68,68,.12);
+      border: 1px solid rgba(239,68,68,.25);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      display: none;
+    }
+    .signin-error.show { display: block; }
+
+    .signin-back { font-size: 13px; color: rgba(255,255,255,.35); }
+    .signin-back a { color: rgba(255,255,255,.5); text-decoration: none; transition: color .15s; }
+    .signin-back a:hover { color: var(--indigo-300); }
+
+    .signin-divider { display: flex; align-items: center; gap: 12px; margin: 20px 0; }
+    .signin-divider span { font-size: 12px; color: rgba(255,255,255,.25); white-space: nowrap; }
+    .signin-divider::before, .signin-divider::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.1); }
+
+    .signin-contact { font-size: 13px; color: rgba(255,255,255,.35); }
+    .signin-contact a { color: var(--indigo-300); text-decoration: none; }
+    .signin-contact a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="signin-wrap">
+    <div class="signin-card">
+
+      <!-- Logo -->
+      <div class="signin-logo">
+        <a href="/">
+          <span class="logo-sky">Sky</span><span style="color:white">lex</span>
+        </a>
+      </div>
+
+      <h1 class="signin-title">Sign in to your workspace</h1>
+      <p class="signin-sub">Enter your company name and we'll redirect you to your organisation's Skylex portal.</p>
+
+      <!-- Form -->
+      <form onsubmit="handleSignin(event)">
+        <div class="signin-field">
+          <label for="company">Company name</label>
+          <input
+            id="company"
+            class="signin-input"
+            type="text"
+            placeholder="e.g. Skycore Solutions"
+            autocomplete="organization"
+            autofocus
+            oninput="updatePreview()"
+          />
+        </div>
+
+        <!-- Live URL preview -->
+        <div class="signin-preview hidden" id="preview">
+          <span class="preview-arrow">→</span>
+          <span class="preview-url">
+            <span class="preview-slug" id="previewSlug"></span>.skylexsolutions.com
+          </span>
+        </div>
+
+        <!-- Error -->
+        <div class="signin-error" id="error">Please enter your company name.</div>
+
+        <button type="submit" class="signin-btn" id="submitBtn" disabled>
+          Continue →
+        </button>
+      </form>
+
+      <div class="signin-divider"><span>not sure?</span></div>
+      <p class="signin-contact">
+        Contact <a href="mailto:info@skycoresolutions.com">info@skycoresolutions.com</a> to get your company's subdomain.
+      </p>
+
+      <div class="signin-divider" style="margin-top:24px"></div>
+      <p class="signin-back"><a href="/">← Back to skylexsolutions.com</a></p>
+
+    </div>
+  </div>
+
+  <script>
+    const BASE_DOMAIN = 'skylexsolutions.com';
+
+    /** Convert a company name to a URL-safe subdomain slug.
+     *  "Skycore Solutions Inc." → "skycoresolutions"
+     *  "Acme Corp."            → "acmecorp"
+     */
+    function toSlug(name) {
+      return name
+        .toLowerCase()
+        // Strip common legal suffixes
+        .replace(/\b(inc\.?|ltd\.?|llc\.?|corp\.?|co\.?|group|international|int'?l\.?)\s*$/gi, '')
+        // Keep only letters and numbers
+        .replace(/[^a-z0-9]/g, '')
+        .trim();
+    }
+
+    function updatePreview() {
+      const input   = document.getElementById('company');
+      const preview = document.getElementById('preview');
+      const slug    = document.getElementById('previewSlug');
+      const btn     = document.getElementById('submitBtn');
+      const error   = document.getElementById('error');
+
+      const raw     = input.value.trim();
+      const derived = toSlug(raw);
+
+      error.classList.remove('show');
+
+      if (!raw || !derived) {
+        preview.classList.add('hidden');
+        btn.disabled = true;
+        return;
+      }
+
+      slug.textContent = derived;
+      preview.classList.remove('hidden');
+      btn.disabled = false;
+    }
+
+    function handleSignin(e) {
+      e.preventDefault();
+
+      const raw   = document.getElementById('company').value.trim();
+      const slug  = toSlug(raw);
+      const error = document.getElementById('error');
+
+      if (!raw || !slug) {
+        error.classList.add('show');
+        return;
+      }
+
+      const url = `https://${slug}.${BASE_DOMAIN}/login`;
+      window.location.href = url;
+    }
+  </script>
+
+</body>
+</html>
