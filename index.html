@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skylex — Language without limits.</title>
+  <meta name="description" content="Skylex is an AI-powered enterprise translation platform with built-in validation workflow, SSO, and SharePoint integration. Built for teams that need accuracy at scale." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── Nav ─────────────────────────────────────────────────────────────── -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">
+        <span class="logo-sky">Sky</span><span class="logo-lex">lex</span>
+      </a>
+      <nav class="nav__links">
+        <a href="#why">Why Skylex</a>
+        <a href="#features">Features</a>
+        <a href="https://app.skylexsolutions.com/login" class="btn btn--ghost">Sign in</a>
+        <a href="#contact" class="btn btn--primary">Request a demo</a>
+      </nav>
+      <button class="nav__burger" aria-label="Menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="#why" onclick="toggleMenu()">Why Skylex</a>
+      <a href="#features" onclick="toggleMenu()">Features</a>
+      <a href="https://app.skylexsolutions.com/login" class="btn btn--ghost">Sign in</a>
+      <a href="#contact" class="btn btn--primary">Request a demo</a>
+    </div>
+  </header>
+
+  <!-- ── Hero ────────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__badge">
+        <span class="badge-dot"></span>
+        AI-powered &nbsp;·&nbsp; Enterprise-ready &nbsp;·&nbsp; Multi-tenant
+      </div>
+      <h1 class="hero__headline">
+        Language<br />
+        <span class="gradient-text">without limits.</span>
+      </h1>
+      <p class="hero__sub">
+        Skylex is an AI-powered translation platform built for enterprise teams.
+        Submit a document, get an accurate translation with expert validation —
+        all inside your company's secure environment.
+      </p>
+      <div class="hero__ctas">
+        <a href="#contact" class="btn btn--primary btn--lg">Request a demo</a>
+        <a href="#why" class="btn btn--outline btn--lg">See how it works</a>
+      </div>
+      <div class="hero__integrations">
+        <span>Works with</span>
+        <div class="integrations-list">
+          <span class="integration-tag">Microsoft Entra ID</span>
+          <span class="integration-tag">Okta</span>
+          <span class="integration-tag">SharePoint</span>
+          <span class="integration-tag">DeepL</span>
+          <span class="integration-tag">Claude AI</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__glow"></div>
+  </section>
+
+  <!-- ── Why Skylex ───────────────────────────────────────────────────────── -->
+  <section class="why" id="why">
+    <div class="container">
+      <div class="section-label">Why Skylex</div>
+      <h2 class="section-title">Translation shouldn't be a bottleneck.</h2>
+      <p class="section-sub">
+        Most organisations manage translations through emails, shared drives, and manual back-and-forth.
+        It's slow, inconsistent, and impossible to audit. Skylex replaces that entire workflow.
+      </p>
+
+      <div class="why__grid">
+        <div class="why__card why__card--problem">
+          <div class="why__card-label">Before Skylex</div>
+          <ul class="why__list why__list--bad">
+            <li>Documents sent over email with no version control</li>
+            <li>No visibility into translation progress</li>
+            <li>Inconsistent terminology across departments</li>
+            <li>Validators working in isolated Word documents</li>
+            <li>Weeks of turnaround for large projects</li>
+            <li>No audit trail for compliance</li>
+          </ul>
+        </div>
+        <div class="why__divider">
+          <div class="why__arrow">→</div>
+        </div>
+        <div class="why__card why__card--solution">
+          <div class="why__card-label">With Skylex</div>
+          <ul class="why__list why__list--good">
+            <li>Submit once, translations start instantly with AI</li>
+            <li>Live dashboard — see every project in real time</li>
+            <li>Shared glossary and translation memory per client</li>
+            <li>Validators work in a structured, tracked workspace</li>
+            <li>Days, not weeks — SLA enforced automatically</li>
+            <li>Full audit log of every edit and approval</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How it works ─────────────────────────────────────────────────────── -->
+  <section class="how">
+    <div class="container">
+      <div class="section-label">How it works</div>
+      <h2 class="section-title">From request to delivery in three steps.</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">01</div>
+          <h3>Submit</h3>
+          <p>Employees submit a document through the Skylex portal — no account needed. The system extracts text, counts words, and calculates an SLA deadline automatically.</p>
+        </div>
+        <div class="step__connector"></div>
+        <div class="step">
+          <div class="step__num">02</div>
+          <h3>AI translates</h3>
+          <p>Claude AI and DeepL translate every segment in parallel, applying your glossary and translation memory for consistent terminology. Images with text are translated too.</p>
+        </div>
+        <div class="step__connector"></div>
+        <div class="step">
+          <div class="step__num">03</div>
+          <h3>Validator reviews &amp; delivers</h3>
+          <p>An assigned linguistic expert reviews, edits, and approves each segment. The final document is generated and delivered — in your original format, layout preserved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Features ─────────────────────────────────────────────────────────── -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-label">Features</div>
+      <h2 class="section-title">Everything your team needs. Nothing it doesn't.</h2>
+      <div class="features__grid">
+
+        <div class="feature-card">
+          <div class="feature-card__icon feature-card__icon--indigo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" /></svg>
+          </div>
+          <h3>AI-powered translation</h3>
+          <p>Claude AI + DeepL work in parallel. Automatic glossary application, translation memory reuse, and image-in-document translation via Gemini.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon feature-card__icon--violet">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>
+          </div>
+          <h3>Enterprise SSO</h3>
+          <p>Works with any OIDC-compatible identity provider — Microsoft Entra ID, Okta, Auth0, Google Workspace, Ping, Keycloak. Role mapping from your directory.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon feature-card__icon--blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>
+          </div>
+          <h3>All major formats</h3>
+          <p>DOCX, PPTX, XLSX, XLIFF, PDF, plain text — layout-preserving translation with lossless re-export. Your document comes back looking exactly as submitted.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon feature-card__icon--emerald">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5" /></svg>
+          </div>
+          <h3>Validator workspace</h3>
+          <p>A structured CAT-tool-style interface for linguistic reviewers. Segment-by-segment editing, DeepL suggestions, TM matches, and one-click approval.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon feature-card__icon--indigo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253" /></svg>
+          </div>
+          <h3>Multi-tenant architecture</h3>
+          <p>Each client gets their own subdomain, Key Vault, and isolated configuration. Onboard a new enterprise client with zero code changes or redeployment.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon feature-card__icon--violet">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" /></svg>
+          </div>
+          <h3>Audit &amp; compliance</h3>
+          <p>Every translation edit, approval, and delivery is logged with a timestamp and user ID. Full audit trail for regulated industries.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA / Contact ────────────────────────────────────────────────────── -->
+  <section class="cta-section" id="contact">
+    <div class="container cta-section__inner">
+      <h2>Ready to eliminate translation bottlenecks?</h2>
+      <p>Get a personalised demo for your organisation. We'll walk you through setup, SSO integration, and onboarding your first project.</p>
+      <form class="cta-form" onsubmit="handleDemo(event)">
+        <input type="text"  name="name"  placeholder="Your name"         required />
+        <input type="email" name="email" placeholder="Work email address" required />
+        <input type="text"  name="org"   placeholder="Organisation"       required />
+        <button type="submit" class="btn btn--primary btn--lg">Request a demo</button>
+      </form>
+      <p class="cta-note" id="cta-msg"></p>
+    </div>
+  </section>
+
+  <!-- ── Footer ───────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo">
+          <span class="logo-sky">Sky</span><span class="logo-lex">lex</span>
+        </a>
+        <p>Language without limits.</p>
+        <p class="footer__credit">A product by <a href="https://skycoresolutions.com" target="_blank">SkyCore Solutions Inc.</a></p>
+      </div>
+      <div class="footer__links">
+        <div>
+          <h4>Product</h4>
+          <a href="#why">Why Skylex</a>
+          <a href="#features">Features</a>
+          <a href="#contact">Request demo</a>
+        </div>
+        <div>
+          <h4>Access</h4>
+          <a href="https://app.skylexsolutions.com/login">Sign in</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="https://skycoresolutions.com" target="_blank">SkyCore Solutions</a>
+          <a href="mailto:info@skycoresolutions.com">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 SkyCore Solutions Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
