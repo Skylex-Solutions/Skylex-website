@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Skylex — Language without limits.</title>
-  <meta name="description" content="Skylex is an AI-powered enterprise translation platform with built-in validation workflow, SSO, and SharePoint integration. Built for teams that need accuracy at scale." />
+  <meta name="description" content="Skylex is an AI-powered enterprise translation platform with built-in validation workflow, SSO, and SharePoint integration." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -19,20 +19,28 @@
         <span class="logo-sky">Sky</span><span class="logo-lex">lex</span>
       </a>
       <nav class="nav__links">
-        <a href="#why">Why Skylex</a>
-        <a href="#features">Features</a>
-        <a href="/signin" class="btn btn--ghost">Sign in</a>
-        <a href="#contact" class="btn btn--primary">Request a demo</a>
+        <a href="#why"><span class="lang-en">Why Skylex</span><span class="lang-fr">Pourquoi Skylex</span></a>
+        <a href="#features"><span class="lang-en">Features</span><span class="lang-fr">Fonctionnalités</span></a>
+        <a href="/signin" class="btn btn--ghost"><span class="lang-en">Sign in</span><span class="lang-fr">Se connecter</span></a>
+        <a href="#contact" class="btn btn--primary"><span class="lang-en">Request a demo</span><span class="lang-fr">Demander une démo</span></a>
+        <div class="lang-switch">
+          <button data-lang-btn="en" class="active" onclick="setLang('en')">EN</button>
+          <button data-lang-btn="fr" onclick="setLang('fr')">FR</button>
+        </div>
       </nav>
       <button class="nav__burger" aria-label="Menu" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="nav__mobile" id="mobileMenu">
-      <a href="#why" onclick="toggleMenu()">Why Skylex</a>
-      <a href="#features" onclick="toggleMenu()">Features</a>
-      <a href="/signin" class="btn btn--ghost">Sign in</a>
-      <a href="#contact" class="btn btn--primary">Request a demo</a>
+      <a href="#why" onclick="toggleMenu()"><span class="lang-en">Why Skylex</span><span class="lang-fr">Pourquoi Skylex</span></a>
+      <a href="#features" onclick="toggleMenu()"><span class="lang-en">Features</span><span class="lang-fr">Fonctionnalités</span></a>
+      <a href="/signin" class="btn btn--ghost"><span class="lang-en">Sign in</span><span class="lang-fr">Se connecter</span></a>
+      <a href="#contact" class="btn btn--primary"><span class="lang-en">Request a demo</span><span class="lang-fr">Demander une démo</span></a>
+      <div class="lang-switch" style="margin:8px 0 0 4px">
+        <button data-lang-btn="en" class="active" onclick="setLang('en')">EN</button>
+        <button data-lang-btn="fr" onclick="setLang('fr')">FR</button>
+      </div>
     </div>
   </header>
 
@@ -41,23 +49,24 @@
     <div class="container hero__inner">
       <div class="hero__badge">
         <span class="badge-dot"></span>
-        AI-powered &nbsp;·&nbsp; Enterprise-ready &nbsp;·&nbsp; Multi-tenant
+        <span class="lang-en">AI-powered &nbsp;·&nbsp; Enterprise-ready &nbsp;·&nbsp; Multi-tenant</span>
+        <span class="lang-fr">Propulsé par l'IA &nbsp;·&nbsp; Prêt pour les entreprises &nbsp;·&nbsp; Multi-locataire</span>
       </div>
       <h1 class="hero__headline">
-        Language<br />
-        <span class="gradient-text">without limits.</span>
+        <span class="lang-en">Language<br /><span class="gradient-text">without limits.</span></span>
+        <span class="lang-fr">La langue<br /><span class="gradient-text">sans limites.</span></span>
       </h1>
       <p class="hero__sub">
-        Skylex is an AI-powered translation platform built for enterprise teams.
-        Submit a document, get an accurate translation with expert validation —
-        all inside your company's secure environment.
+        <span class="lang-en">Skylex is an AI-powered translation platform built for enterprise teams. Submit a document, get an accurate translation with expert validation — all inside your company's secure environment.</span>
+        <span class="lang-fr">Skylex est une plateforme de traduction propulsée par l'IA, conçue pour les équipes d'entreprise. Soumettez un document, obtenez une traduction précise avec une révision experte — au sein de l'environnement sécurisé de votre organisation.</span>
       </p>
       <div class="hero__ctas">
-        <a href="#contact" class="btn btn--primary btn--lg">Request a demo</a>
-        <a href="#how" class="btn btn--outline btn--lg">See how it works</a>
+        <a href="#contact" class="btn btn--primary btn--lg"><span class="lang-en">Request a demo</span><span class="lang-fr">Demander une démo</span></a>
+        <a href="#how" class="btn btn--outline btn--lg"><span class="lang-en">See how it works</span><span class="lang-fr">Voir comment ça fonctionne</span></a>
       </div>
       <div class="hero__integrations">
-        <span>Works with</span>
+        <span class="lang-en">Works with</span>
+        <span class="lang-fr">Compatible avec</span>
         <div class="integrations-list">
           <span class="integration-tag">Microsoft Entra ID</span>
           <span class="integration-tag">Okta</span>
@@ -73,37 +82,38 @@
   <!-- ── Why Skylex ───────────────────────────────────────────────────────── -->
   <section class="why" id="why">
     <div class="container">
-      <div class="section-label">Why Skylex</div>
-      <h2 class="section-title">Translation shouldn't be a bottleneck.</h2>
+      <div class="section-label"><span class="lang-en">Why Skylex</span><span class="lang-fr">Pourquoi Skylex</span></div>
+      <h2 class="section-title">
+        <span class="lang-en">Translation shouldn't be a bottleneck.</span>
+        <span class="lang-fr">La traduction ne devrait pas ralentir votre organisation.</span>
+      </h2>
       <p class="section-sub">
-        Most organisations manage translations through emails, shared drives, and manual back-and-forth.
-        It's slow, inconsistent, and impossible to audit. Skylex replaces that entire workflow.
+        <span class="lang-en">Most organisations manage translations through emails, shared drives, and manual back-and-forth. It's slow, inconsistent, and impossible to audit. Skylex replaces that entire workflow.</span>
+        <span class="lang-fr">La plupart des organisations gèrent leurs traductions par courriel, lecteurs partagés et allers-retours manuels. C'est lent, incohérent et impossible à auditer. Skylex remplace entièrement ce flux de travail.</span>
       </p>
 
       <div class="why__grid">
         <div class="why__card why__card--problem">
-          <div class="why__card-label">Before Skylex</div>
+          <div class="why__card-label"><span class="lang-en">Before Skylex</span><span class="lang-fr">Avant Skylex</span></div>
           <ul class="why__list why__list--bad">
-            <li>Documents sent over email with no version control</li>
-            <li>No visibility into translation progress</li>
-            <li>Inconsistent terminology across departments</li>
-            <li>Validators working in isolated Word documents</li>
-            <li>Weeks of turnaround for large projects</li>
-            <li>No audit trail for compliance</li>
+            <li><span class="lang-en">Documents sent over email with no version control</span><span class="lang-fr">Documents envoyés par courriel sans contrôle de version</span></li>
+            <li><span class="lang-en">No visibility into translation progress</span><span class="lang-fr">Aucune visibilité sur l'avancement des traductions</span></li>
+            <li><span class="lang-en">Inconsistent terminology across departments</span><span class="lang-fr">Terminologie incohérente entre les départements</span></li>
+            <li><span class="lang-en">Validators working in isolated Word documents</span><span class="lang-fr">Validateurs travaillant dans des documents Word isolés</span></li>
+            <li><span class="lang-en">Weeks of turnaround for large projects</span><span class="lang-fr">Des semaines de délai pour les grands projets</span></li>
+            <li><span class="lang-en">No audit trail for compliance</span><span class="lang-fr">Aucune piste d'audit pour la conformité</span></li>
           </ul>
         </div>
-        <div class="why__divider">
-          <div class="why__arrow">→</div>
-        </div>
+        <div class="why__divider"><div class="why__arrow">→</div></div>
         <div class="why__card why__card--solution">
-          <div class="why__card-label">With Skylex</div>
+          <div class="why__card-label"><span class="lang-en">With Skylex</span><span class="lang-fr">Avec Skylex</span></div>
           <ul class="why__list why__list--good">
-            <li>Submit once, translations start instantly with AI</li>
-            <li>Live dashboard — see every project in real time</li>
-            <li>Shared glossary and translation memory per client</li>
-            <li>Validators work in a structured, tracked workspace</li>
-            <li>Days, not weeks — SLA enforced automatically</li>
-            <li>Full audit log of every edit and approval</li>
+            <li><span class="lang-en">Submit once, translations start instantly with AI</span><span class="lang-fr">Soumission unique, traductions démarrées instantanément par l'IA</span></li>
+            <li><span class="lang-en">Live dashboard — see every project in real time</span><span class="lang-fr">Tableau de bord en direct — suivez chaque projet en temps réel</span></li>
+            <li><span class="lang-en">Shared glossary and translation memory per client</span><span class="lang-fr">Glossaire et mémoire de traduction partagés par client</span></li>
+            <li><span class="lang-en">Validators work in a structured, tracked workspace</span><span class="lang-fr">Validateurs dans un espace de travail structuré et tracé</span></li>
+            <li><span class="lang-en">Days, not weeks — SLA enforced automatically</span><span class="lang-fr">Des jours, pas des semaines — SLA respecté automatiquement</span></li>
+            <li><span class="lang-en">Full audit log of every edit and approval</span><span class="lang-fr">Journal d'audit complet de chaque modification et approbation</span></li>
           </ul>
         </div>
       </div>
@@ -113,25 +123,37 @@
   <!-- ── How it works ─────────────────────────────────────────────────────── -->
   <section class="how" id="how">
     <div class="container">
-      <div class="section-label">How it works</div>
-      <h2 class="section-title">From request to delivery in three steps.</h2>
+      <div class="section-label"><span class="lang-en">How it works</span><span class="lang-fr">Comment ça fonctionne</span></div>
+      <h2 class="section-title">
+        <span class="lang-en">From request to delivery in three steps.</span>
+        <span class="lang-fr">De la demande à la livraison en trois étapes.</span>
+      </h2>
       <div class="steps">
         <div class="step">
           <div class="step__num">01</div>
-          <h3>Submit</h3>
-          <p>Employees submit a document through the Skylex portal. The system extracts text, counts words, and calculates an SLA deadline automatically.</p>
+          <h3><span class="lang-en">Submit</span><span class="lang-fr">Soumission</span></h3>
+          <p>
+            <span class="lang-en">Employees submit a document through the Skylex portal. The system extracts text, counts words, and calculates an SLA deadline automatically.</span>
+            <span class="lang-fr">Les employés soumettent un document via le portail Skylex. Le système extrait le texte, compte les mots et calcule automatiquement une date limite selon les accords de niveau de service.</span>
+          </p>
         </div>
         <div class="step__connector"></div>
         <div class="step">
           <div class="step__num">02</div>
-          <h3>AI translates</h3>
-          <p>Lexii, our proprietary AI translator, and DeepL translate every segment in parallel, applying your glossary and translation memory for consistent terminology. Images with text are translated too.</p>
+          <h3><span class="lang-en">AI translates</span><span class="lang-fr">L'IA traduit</span></h3>
+          <p>
+            <span class="lang-en">Lexii, our proprietary AI translator, and DeepL translate every segment in parallel, applying your glossary and translation memory for consistent terminology. Images with text are translated too.</span>
+            <span class="lang-fr">Lexii, notre traducteur IA propriétaire, et DeepL traduisent chaque segment en parallèle, en appliquant votre glossaire et mémoire de traduction pour une terminologie cohérente. Les images contenant du texte sont également traduites.</span>
+          </p>
         </div>
         <div class="step__connector"></div>
         <div class="step">
           <div class="step__num">03</div>
-          <h3>Validator reviews &amp; delivers</h3>
-          <p>An assigned linguistic expert reviews, edits, and approves each segment. The final document is generated and delivered — in your original format, layout preserved.</p>
+          <h3><span class="lang-en">Validator reviews &amp; delivers</span><span class="lang-fr">Le validateur révise et livre</span></h3>
+          <p>
+            <span class="lang-en">An assigned linguistic expert reviews, edits, and approves each segment. The final document is generated and delivered — in your original format, layout preserved.</span>
+            <span class="lang-fr">Un expert linguistique désigné révise, modifie et approuve chaque segment. Le document final est généré et livré — dans votre format d'origine, mise en page préservée.</span>
+          </p>
         </div>
       </div>
     </div>
@@ -140,56 +162,77 @@
   <!-- ── Features ─────────────────────────────────────────────────────────── -->
   <section class="features" id="features">
     <div class="container">
-      <div class="section-label">Features</div>
-      <h2 class="section-title">Everything your team needs. Nothing it doesn't.</h2>
+      <div class="section-label"><span class="lang-en">Features</span><span class="lang-fr">Fonctionnalités</span></div>
+      <h2 class="section-title">
+        <span class="lang-en">Everything your team needs. Nothing it doesn't.</span>
+        <span class="lang-fr">Tout ce dont votre équipe a besoin. Rien de superflu.</span>
+      </h2>
       <div class="features__grid">
 
         <div class="feature-card">
           <div class="feature-card__icon feature-card__icon--indigo">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" /></svg>
           </div>
-          <h3>AI-powered translation</h3>
-          <p>Lexii, our proprietary AI translator, works alongside DeepL in parallel. Automatic glossary application, translation memory reuse, and image-in-document translation included.</p>
+          <h3><span class="lang-en">AI-powered translation</span><span class="lang-fr">Traduction par IA</span></h3>
+          <p>
+            <span class="lang-en">Lexii, our proprietary AI translator, works alongside DeepL in parallel. Automatic glossary application, translation memory reuse, and image-in-document translation included.</span>
+            <span class="lang-fr">Lexii, notre traducteur IA propriétaire, et DeepL travaillent en parallèle. Application automatique des glossaires, réutilisation de la mémoire de traduction et traduction des images intégrées aux documents.</span>
+          </p>
         </div>
 
         <div class="feature-card">
           <div class="feature-card__icon feature-card__icon--violet">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>
           </div>
-          <h3>Enterprise SSO</h3>
-          <p>Works with any OIDC-compatible identity provider — Microsoft Entra ID, Okta, Auth0, Google Workspace, Ping, Keycloak. Role mapping from your directory.</p>
+          <h3><span class="lang-en">Enterprise SSO</span><span class="lang-fr">SSO d'entreprise</span></h3>
+          <p>
+            <span class="lang-en">Works with any OIDC-compatible identity provider — Microsoft Entra ID, Okta, Auth0, Google Workspace, Ping, Keycloak. Role mapping from your directory.</span>
+            <span class="lang-fr">Compatible avec tout fournisseur d'identité OIDC — Microsoft Entra ID, Okta, Auth0, Google Workspace, Ping, Keycloak. Mapping des rôles depuis votre annuaire d'entreprise.</span>
+          </p>
         </div>
 
         <div class="feature-card">
           <div class="feature-card__icon feature-card__icon--blue">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>
           </div>
-          <h3>All major formats</h3>
-          <p>DOCX, PPTX, XLSX, XLIFF, PDF, plain text — layout-preserving translation with lossless re-export. Your document comes back looking exactly as submitted.</p>
+          <h3><span class="lang-en">All major formats</span><span class="lang-fr">Tous les formats majeurs</span></h3>
+          <p>
+            <span class="lang-en">DOCX, PPTX, XLSX, XLIFF, PDF, plain text — layout-preserving translation with lossless re-export. Your document comes back looking exactly as submitted.</span>
+            <span class="lang-fr">DOCX, PPTX, XLSX, XLIFF, PDF, texte brut — traduction avec préservation de la mise en page et réexportation sans perte. Votre document revient exactement tel qu'il a été soumis.</span>
+          </p>
         </div>
 
         <div class="feature-card">
           <div class="feature-card__icon feature-card__icon--emerald">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5" /></svg>
           </div>
-          <h3>Validator workspace</h3>
-          <p>A structured CAT-tool-style interface for linguistic reviewers. Segment-by-segment editing, DeepL suggestions, TM matches, and one-click approval.</p>
+          <h3><span class="lang-en">Validator workspace</span><span class="lang-fr">Espace validateur</span></h3>
+          <p>
+            <span class="lang-en">A structured CAT-tool-style interface for linguistic reviewers. Segment-by-segment editing, DeepL suggestions, TM matches, and one-click approval.</span>
+            <span class="lang-fr">Interface structurée de type outil de TAO pour les réviseurs linguistiques. Édition segment par segment, suggestions DeepL, correspondances MT et approbation en un clic.</span>
+          </p>
         </div>
 
         <div class="feature-card">
           <div class="feature-card__icon feature-card__icon--indigo">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253" /></svg>
           </div>
-          <h3>Multi-tenant architecture</h3>
-          <p>Each client gets their own subdomain, Key Vault, and isolated configuration. Onboard a new enterprise client with zero code changes or redeployment.</p>
+          <h3><span class="lang-en">Multi-tenant architecture</span><span class="lang-fr">Architecture multi-locataire</span></h3>
+          <p>
+            <span class="lang-en">Each client gets their own subdomain, Key Vault, and isolated configuration. Onboard a new enterprise client with zero code changes or redeployment.</span>
+            <span class="lang-fr">Chaque client dispose de son propre sous-domaine, coffre-fort de clés et configuration isolée. Intégrez un nouveau client d'entreprise sans aucune modification de code ni redéploiement.</span>
+          </p>
         </div>
 
         <div class="feature-card">
           <div class="feature-card__icon feature-card__icon--violet">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" /></svg>
           </div>
-          <h3>Audit &amp; compliance</h3>
-          <p>Every translation edit, approval, and delivery is logged with a timestamp and user ID. Full audit trail for regulated industries.</p>
+          <h3><span class="lang-en">Audit &amp; compliance</span><span class="lang-fr">Audit et conformité</span></h3>
+          <p>
+            <span class="lang-en">Every translation edit, approval, and delivery is logged with a timestamp and user ID. Full audit trail for regulated industries.</span>
+            <span class="lang-fr">Chaque modification, approbation et livraison de traduction est consignée avec un horodatage et un identifiant utilisateur. Piste d'audit complète pour les industries réglementées.</span>
+          </p>
         </div>
 
       </div>
@@ -199,13 +242,22 @@
   <!-- ── CTA / Contact ────────────────────────────────────────────────────── -->
   <section class="cta-section" id="contact">
     <div class="container cta-section__inner">
-      <h2>Ready to eliminate translation bottlenecks?</h2>
-      <p>Get a personalised demo for your organisation. We'll walk you through setup, SSO integration, and onboarding your first project.</p>
+      <h2>
+        <span class="lang-en">Ready to eliminate translation bottlenecks?</span>
+        <span class="lang-fr">Prêt à éliminer les délais de traduction?</span>
+      </h2>
+      <p>
+        <span class="lang-en">Get a personalised demo for your organisation. We'll walk you through setup, SSO integration, and onboarding your first project.</span>
+        <span class="lang-fr">Obtenez une démo personnalisée pour votre organisation. Nous vous guiderons à travers la configuration, l'intégration SSO et l'onboarding de votre premier projet.</span>
+      </p>
       <form class="cta-form" onsubmit="handleDemo(event)">
-        <input type="text"  name="name"  placeholder="Your name"         required />
-        <input type="email" name="email" placeholder="Work email address" required />
-        <input type="text"  name="org"   placeholder="Organisation"       required />
-        <button type="submit" class="btn btn--primary btn--lg">Request a demo</button>
+        <input type="text"  name="name"  class="lang-en-ph" placeholder="Your name"          required />
+        <input type="email" name="email" class="lang-en-ph" placeholder="Work email address" required />
+        <input type="text"  name="org"   class="lang-en-ph" placeholder="Organisation"        required />
+        <button type="submit" class="btn btn--primary btn--lg">
+          <span class="lang-en">Request a demo</span>
+          <span class="lang-fr">Demander une démo</span>
+        </button>
       </form>
       <p class="cta-note" id="cta-msg"></p>
     </div>
@@ -218,33 +270,100 @@
         <a href="/" class="nav__logo">
           <span class="logo-sky">Sky</span><span class="logo-lex">lex</span>
         </a>
-        <p>Language without limits.</p>
+        <p><span class="lang-en">Language without limits.</span><span class="lang-fr">La langue sans limites.</span></p>
       </div>
       <div class="footer__links">
         <div>
-          <h4>Product</h4>
-          <a href="#why">Why Skylex</a>
-          <a href="#features">Features</a>
-          <a href="#contact">Request demo</a>
+          <h4><span class="lang-en">Product</span><span class="lang-fr">Produit</span></h4>
+          <a href="#why"><span class="lang-en">Why Skylex</span><span class="lang-fr">Pourquoi Skylex</span></a>
+          <a href="#features"><span class="lang-en">Features</span><span class="lang-fr">Fonctionnalités</span></a>
+          <a href="#contact"><span class="lang-en">Request demo</span><span class="lang-fr">Demander une démo</span></a>
         </div>
         <div>
-          <h4>Access</h4>
-          <a href="/signin">Sign in</a>
+          <h4><span class="lang-en">Access</span><span class="lang-fr">Accès</span></h4>
+          <a href="/signin"><span class="lang-en">Sign in</span><span class="lang-fr">Se connecter</span></a>
         </div>
         <div>
           <h4>Resources</h4>
-          <a href="/about">About us</a>
-          <a href="mailto:info@skylexsolutions.com">Contact us</a>
+          <a href="/about"><span class="lang-en">About us</span><span class="lang-fr">À propos</span></a>
+          <a href="mailto:info@skylexsolutions.com"><span class="lang-en">Contact us</span><span class="lang-fr">Nous contacter</span></a>
+        </div>
+        <div>
+          <h4><span class="lang-en">Legal</span><span class="lang-fr">Légal</span></h4>
+          <a href="/privacy-policy"><span class="lang-en">Privacy Policy</span><span class="lang-fr">Politique de confidentialité</span></a>
+          <a href="/terms"><span class="lang-en">Terms &amp; Conditions</span><span class="lang-fr">Conditions d'utilisation</span></a>
+          <a href="/cookies"><span class="lang-en">Cookie Policy</span><span class="lang-fr">Politique de cookies</span></a>
         </div>
       </div>
     </div>
     <div class="footer__bottom">
       <div class="container">
-        <p>&copy; 2026 Skylex Solutions. A SkyCore Solutions Inc. company. All rights reserved.</p>
+        <p>
+          <span class="lang-en">&copy; 2026 Skylex Solutions. A SkyCore Solutions Inc. company. All rights reserved.</span>
+          <span class="lang-fr">&copy; 2026 Skylex Solutions. Une société de SkyCore Solutions Inc. Tous droits réservés.</span>
+        </p>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="lang.js"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+    document.addEventListener('click', (e) => {
+      const menu = document.getElementById('mobileMenu');
+      if (!e.target.closest('.nav') && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+      }
+    });
+
+    // Update form placeholders based on language
+    function updatePlaceholders() {
+      const lang = localStorage.getItem('skylex_lang') || 'en';
+      const form = document.querySelector('.cta-form');
+      if (!form) return;
+      const [name, email, org] = form.querySelectorAll('input');
+      if (lang === 'fr') {
+        name.placeholder  = 'Votre nom';
+        email.placeholder = 'Adresse courriel professionnelle';
+        org.placeholder   = 'Organisation';
+      } else {
+        name.placeholder  = 'Your name';
+        email.placeholder = 'Work email address';
+        org.placeholder   = 'Organisation';
+      }
+    }
+
+    const _origSetLang = window.setLang;
+    window.setLang = function(lang) { _origSetLang(lang); updatePlaceholders(); };
+    document.addEventListener('DOMContentLoaded', updatePlaceholders);
+
+    function handleDemo(e) {
+      e.preventDefault();
+      const form = e.target;
+      const msg  = document.getElementById('cta-msg');
+      const btn  = form.querySelector('button');
+      const lang = localStorage.getItem('skylex_lang') || 'en';
+      btn.disabled = true;
+      setTimeout(() => {
+        msg.textContent = lang === 'fr'
+          ? '✓ Merci ! Nous vous contacterons dans un délai d\'un jour ouvrable.'
+          : '✓ Thanks! We\'ll be in touch within one business day.';
+        form.reset();
+        btn.disabled = false;
+      }, 800);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 72;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>

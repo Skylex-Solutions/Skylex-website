@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Policy — Skylex</title>
+  <meta name="description" content="Cookie Policy for the Skylex AI-powered translation platform." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="legal.css" />
+</head>
+<body>
+
+  <!-- Nav -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo"><span class="logo-sky">Sky</span><span class="logo-lex">lex</span></a>
+      <nav class="nav__links">
+        <a href="/#why"><span class="lang-en">Why Skylex</span><span class="lang-fr">Pourquoi Skylex</span></a>
+        <a href="/#features"><span class="lang-en">Features</span><span class="lang-fr">Fonctionnalités</span></a>
+        <a href="/signin" class="btn btn--ghost"><span class="lang-en">Sign in</span><span class="lang-fr">Se connecter</span></a>
+        <a href="/#contact" class="btn btn--primary"><span class="lang-en">Request a demo</span><span class="lang-fr">Demander une démo</span></a>
+        <div class="lang-switch">
+          <button data-lang-btn="en" class="active" onclick="setLang('en')">EN</button>
+          <button data-lang-btn="fr" onclick="setLang('fr')">FR</button>
+        </div>
+      </nav>
+      <button class="nav__burger" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="/#why" onclick="toggleMenu()"><span class="lang-en">Why Skylex</span><span class="lang-fr">Pourquoi Skylex</span></a>
+      <a href="/signin" class="btn btn--ghost"><span class="lang-en">Sign in</span><span class="lang-fr">Se connecter</span></a>
+      <div class="lang-switch" style="margin:8px 0 0 4px">
+        <button data-lang-btn="en" class="active" onclick="setLang('en')">EN</button>
+        <button data-lang-btn="fr" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-page">
+    <div class="container legal-inner">
+
+      <!-- ── ENGLISH ─────────────────────────────────────────────────────── -->
+      <div class="lang-en">
+        <div class="legal-header">
+          <div class="section-label">Legal</div>
+          <h1>Cookie Policy</h1>
+          <p class="legal-meta">Effective date: June 1, 2026 &nbsp;·&nbsp; Skylex Solutions, Montreal, Quebec, Canada</p>
+        </div>
+
+        <div class="legal-body">
+          <h2>1. What Are Cookies?</h2>
+          <p>Cookies are small text files placed on your device when you visit a website. They allow the website to remember your actions and preferences over time. This Cookie Policy explains how Skylex Solutions uses cookies and similar technologies on the Skylex platform.</p>
+
+          <h2>2. Cookies We Use</h2>
+          <p>Skylex uses only <strong>strictly essential cookies</strong> — those necessary for the platform to function. We do not use any tracking, advertising, or analytics cookies.</p>
+
+          <table class="cookie-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Purpose</th>
+                <th>Duration</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>skylex_session</td>
+                <td>Maintains your authenticated session so you don't need to log in on every page.</td>
+                <td>Session or up to 24 hours</td>
+                <td><span class="cookie-badge">Essential</span></td>
+              </tr>
+              <tr>
+                <td>csrf_token</td>
+                <td>Protects against Cross-Site Request Forgery (CSRF) attacks on forms and server actions.</td>
+                <td>Session</td>
+                <td><span class="cookie-badge">Essential</span></td>
+              </tr>
+              <tr>
+                <td>__Host-next-auth.*</td>
+                <td>Used by the SSO authentication flow for state and nonce verification.</td>
+                <td>Session</td>
+                <td><span class="cookie-badge">Essential</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>3. What We Don't Use</h2>
+          <p>Skylex does <strong>not</strong> use:</p>
+          <ul>
+            <li>Analytics or tracking cookies (e.g. Google Analytics, Mixpanel, Hotjar);</li>
+            <li>Advertising or retargeting cookies;</li>
+            <li>Social media cookies;</li>
+            <li>Third-party performance or functional cookies.</li>
+          </ul>
+          <p>We have deliberately kept our cookie footprint minimal to respect your privacy.</p>
+
+          <h2>4. Local Storage</h2>
+          <p>In addition to cookies, Skylex stores your language preference (EN/FR) in your browser's <code>localStorage</code> under the key <code>skylex_lang</code>. This data never leaves your device and is not transmitted to our servers.</p>
+
+          <h2>5. Managing Cookies</h2>
+          <p>Because all cookies set by Skylex are strictly essential, disabling them will prevent the platform from functioning — you will not be able to log in or maintain a session.</p>
+          <p>You can clear cookies at any time through your browser settings:</p>
+          <ul>
+            <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+            <li><a href="https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+            <li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank" rel="noopener noreferrer">Apple Safari</a></li>
+            <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+          </ul>
+
+          <h2>6. Changes to This Policy</h2>
+          <p>We may update this Cookie Policy from time to time. The effective date at the top of this page reflects the most recent revision. Material changes will be communicated to account owners via email.</p>
+
+          <h2>7. Contact</h2>
+          <address>
+            <strong>Skylex Solutions</strong><br />
+            Montreal, Quebec, Canada<br />
+            Email: <a href="mailto:privacy@skylexsolutions.com">privacy@skylexsolutions.com</a>
+          </address>
+        </div>
+      </div>
+
+      <!-- ── FRENCH ──────────────────────────────────────────────────────── -->
+      <div class="lang-fr">
+        <div class="legal-header">
+          <div class="section-label">Légal</div>
+          <h1>Politique de cookies</h1>
+          <p class="legal-meta">Date d'entrée en vigueur : 1er juin 2026 &nbsp;·&nbsp; Skylex Solutions, Montréal, Québec, Canada</p>
+        </div>
+
+        <div class="legal-body">
+          <h2>1. Qu'est-ce qu'un cookie ?</h2>
+          <p>Les cookies sont de petits fichiers texte placés sur votre appareil lorsque vous visitez un site Web. Ils permettent au site de mémoriser vos actions et préférences au fil du temps. La présente Politique de cookies explique comment Skylex Solutions utilise les cookies et technologies similaires sur la plateforme Skylex.</p>
+
+          <h2>2. Cookies que nous utilisons</h2>
+          <p>Skylex utilise uniquement des <strong>cookies strictement essentiels</strong> — ceux nécessaires au fonctionnement de la plateforme. Nous n'utilisons aucun cookie de suivi, de publicité ou d'analyse.</p>
+
+          <table class="cookie-table">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Finalité</th>
+                <th>Durée</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>skylex_session</td>
+                <td>Maintient votre session authentifiée afin que vous n'ayez pas à vous reconnecter à chaque page.</td>
+                <td>Session ou jusqu'à 24 heures</td>
+                <td><span class="cookie-badge">Essentiel</span></td>
+              </tr>
+              <tr>
+                <td>csrf_token</td>
+                <td>Protège contre les attaques CSRF (Cross-Site Request Forgery) sur les formulaires et les actions serveur.</td>
+                <td>Session</td>
+                <td><span class="cookie-badge">Essentiel</span></td>
+              </tr>
+              <tr>
+                <td>__Host-next-auth.*</td>
+                <td>Utilisé par le flux d'authentification SSO pour la vérification de l'état et du nonce.</td>
+                <td>Session</td>
+                <td><span class="cookie-badge">Essentiel</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>3. Ce que nous n'utilisons pas</h2>
+          <p>Skylex n'utilise <strong>pas</strong> :</p>
+          <ul>
+            <li>De cookies d'analyse ou de suivi (ex. : Google Analytics, Mixpanel, Hotjar) ;</li>
+            <li>De cookies publicitaires ou de reciblage ;</li>
+            <li>De cookies de réseaux sociaux ;</li>
+            <li>De cookies de performance ou fonctionnels tiers.</li>
+          </ul>
+          <p>Nous avons délibérément limité notre utilisation des cookies pour respecter votre vie privée.</p>
+
+          <h2>4. Stockage local (localStorage)</h2>
+          <p>En plus des cookies, Skylex stocke votre préférence de langue (FR/EN) dans le <code>localStorage</code> de votre navigateur sous la clé <code>skylex_lang</code>. Ces données ne quittent jamais votre appareil et ne sont pas transmises à nos serveurs.</p>
+
+          <h2>5. Gestion des cookies</h2>
+          <p>Étant donné que tous les cookies définis par Skylex sont strictement essentiels, leur désactivation empêchera le bon fonctionnement de la plateforme — vous ne pourrez pas vous connecter ni maintenir une session.</p>
+          <p>Vous pouvez effacer les cookies à tout moment via les paramètres de votre navigateur :</p>
+          <ul>
+            <li><a href="https://support.google.com/chrome/answer/95647?hl=fr" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+            <li><a href="https://support.mozilla.org/fr/kb/effacer-les-cookies-et-les-donnees-de-sites" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+            <li><a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Apple Safari</a></li>
+            <li><a href="https://support.microsoft.com/fr-fr/microsoft-edge/supprimer-les-cookies-dans-microsoft-edge" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+          </ul>
+
+          <h2>6. Modifications de la présente politique</h2>
+          <p>Nous pouvons mettre à jour la présente Politique de cookies à l'occasion. La date d'entrée en vigueur en haut de cette page indique la révision la plus récente. Les modifications importantes seront communiquées aux propriétaires de compte par courriel.</p>
+
+          <h2>7. Nous contacter</h2>
+          <address>
+            <strong>Skylex Solutions</strong><br />
+            Montréal, Québec, Canada<br />
+            Courriel : <a href="mailto:privacy@skylexsolutions.com">privacy@skylexsolutions.com</a>
+          </address>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo"><span class="logo-sky">Sky</span><span class="logo-lex">lex</span></a>
+        <p><span class="lang-en">Language without limits.</span><span class="lang-fr">La langue sans limites.</span></p>
+      </div>
+      <div class="footer__links">
+        <div>
+          <h4><span class="lang-en">Legal</span><span class="lang-fr">Légal</span></h4>
+          <a href="/privacy-policy"><span class="lang-en">Privacy Policy</span><span class="lang-fr">Politique de confidentialité</span></a>
+          <a href="/terms"><span class="lang-en">Terms &amp; Conditions</span><span class="lang-fr">Conditions d'utilisation</span></a>
+          <a href="/cookies"><span class="lang-en">Cookie Policy</span><span class="lang-fr">Politique de cookies</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p><span class="lang-en">&copy; 2026 Skylex Solutions. A SkyCore Solutions Inc. company. All rights reserved.</span><span class="lang-fr">&copy; 2026 Skylex Solutions. Une société de SkyCore Solutions Inc. Tous droits réservés.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="lang.js"></script>
+  <script>
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  </script>
+</body>
+</html>
