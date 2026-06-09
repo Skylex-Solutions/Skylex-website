@@ -1,5 +1,6 @@
-/* ── Language classes (hidden by default; shown via lang.js) ─────────────── */
-.lang-fr { display: none; }
+/* ── Language visibility — driven by <html lang="en|fr"> attribute ────────── */
+[lang="en"] .lang-fr,
+[lang="fr"] .lang-en { display: none !important; }
 
 /* ── Reset & Base ─────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
