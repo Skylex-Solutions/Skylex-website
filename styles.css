@@ -508,3 +508,50 @@ body {
   .hero { padding: 72px 0 88px; }
   .why, .how, .features, .cta-section { padding: 64px 0; }
 }
+
+/* ── French language refinements ────────────────────────────────────────────
+   French text runs ~20-30% longer than English. These rules correct the
+   areas most affected without touching the overall layout.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Nav: tighten item spacing so longer labels fit comfortably */
+[lang="fr"] .nav__links a:not(.btn) { font-size: 13.5px; padding: 8px 11px; }
+[lang="fr"] .nav__links .btn        { font-size: 13.5px; padding: 9px 15px; }
+
+/* Collapse to burger sooner — French nav overflows at ~900px */
+@media (max-width: 920px) {
+  [lang="fr"] .nav__links  { display: none; }
+  [lang="fr"] .nav__burger { display: flex; }
+}
+
+/* Hero badge: allow wrapping so the longer FR string stays centred */
+[lang="fr"] .hero__badge {
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Hero sub: a touch wider so the FR sentence doesn't wrap too early */
+[lang="fr"] .hero__sub { max-width: 680px; }
+
+/* CTA buttons: trim padding so "Voir comment ça fonctionne" stays on one line */
+[lang="fr"] .btn--lg { font-size: 14.5px; padding: 12px 22px; }
+
+/* Section titles: scale down the max slightly — FR headings are denser */
+[lang="fr"] .section-title {
+  font-size: clamp(26px, 3.6vw, 38px);
+  letter-spacing: -.5px;
+}
+
+/* Section sub: a bit wider for longer FR intro paragraphs */
+[lang="fr"] .section-sub { max-width: 640px; }
+
+/* CTA description: slightly wider max-width for the longer FR sentence */
+[lang="fr"] .cta-section p { max-width: 600px; }
+
+/* Feature cards: ease line-height slightly — FR descriptions are longer */
+[lang="fr"] .feature-card p { font-size: 13.5px; line-height: 1.7; }
